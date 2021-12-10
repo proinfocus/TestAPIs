@@ -1,0 +1,27 @@
+{
+    "short_name": "Test APIs",
+    "name": "Proinfocus Test APIs",
+    "icons": [
+      {
+        "src": "logo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "logo.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "logo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#333333",    
+    "description": "A tiny, simple and easy to use application to test REST APIs."    
+  }
