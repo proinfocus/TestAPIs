@@ -20,6 +20,12 @@ sendButton.addEventListener("click", () => {
 })
 
 function executeRequest() {
+    if (endPoint.value == "")
+    {
+        result.innerHTML = "Invalid request. Request URL EndPoint required."
+        return
+    }
+
     let xhr = new XMLHttpRequest()
     xhr.onload = (response) => {
         const status = `Status: ${response.currentTarget.status}<br>`
