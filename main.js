@@ -11,6 +11,8 @@ const sendHeaders = document.getElementById("sendHeaders")
 
 const result = document.getElementById("result")
 
+endPoint.addEventListener("keypress", (e) => e.key == "Enter" ? executeRequest() : "")
+
 sendButton.addEventListener("click", () => {
     result.innerHTML = "Please wait ..."
     auto.Save()
@@ -26,6 +28,7 @@ function executeRequest() {
         const responseText = response.currentTarget.responseText != "" ? `Response Text: <pre>${response.currentTarget.responseText}</pre>` : ""
 
         result.innerHTML = status + statusText + timeOut + responseText
+        sendBody.style.height = ""
     } 
     xhr.onerror = (err) => {
         result.innerText = `Status: ${err.currentTarget.status}\n\n${err.currentTarget.response}`
@@ -55,8 +58,15 @@ window.addEventListener("load", () => {
 
 sendBody.addEventListener("blur", (e) => {    
     let ugly = e.target.value
-    let parsed = JSON.parse(ugly)    
-    let pretty = JSON.stringify(parsed, undefined, 4)
-    e.target.value = pretty
-    e.target.style.height = (e.target.scrollHeight + 2) + "px"
+    if (ugly == "")
+    {
+        e.target.style.height = ""
+        return
+    }
+    try {
+        let parsed = JSON.parse(ugly)    
+        let pretty = JSON.stringify(parsed, undefined, 4)
+        e.target.value = pretty
+        e.target.style.height = (e.target.scrollHeight + 2) + "px"
+    } catch {}
 })
