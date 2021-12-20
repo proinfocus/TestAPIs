@@ -28,9 +28,9 @@ function executeRequest() {
 
     let xhr = new XMLHttpRequest()
     xhr.onload = (response) => {
-        const status = `Status: ${response.currentTarget.status}<br>`
+        const status = `Status: <b>${response.currentTarget.status}</b><br>`
         const statusText = response.currentTarget.statusText != "" ? `Status Text: ${response.currentTarget.statusText}<br>` : ""
-        const timeOut = `Timeout: ${response.currentTarget.timeout}<br><br>`
+        const timeOut = `Timeout: <b>${response.currentTarget.timeout}</b><br><br>`
         const prettyResponse = JSON.stringify(JSON.parse(response.currentTarget.responseText), undefined, 4)
         const precls = (parseInt(response.currentTarget.status) >= 200 && parseInt(response.currentTarget.status) <300) ? "green" : "red"
         const responseText = response.currentTarget.responseText != "" ? `Response Text: <pre class='${precls}'>${prettyResponse}</pre>` : ""
