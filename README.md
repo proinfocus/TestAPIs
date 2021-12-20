@@ -3,6 +3,7 @@ A tiny, simple and easy to use application to test REST APIs.
 
 Starting using it from [the app link here...](https://determined-pike-06d5f7.netlify.app/)
 
+![alt TestAPIs Screenshot](testapi-output.png)
 
 ## Usage
 1. Choose Request type - GET, POST, PUT or DELETE. For eg: `GET`
