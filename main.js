@@ -60,9 +60,25 @@ window.addEventListener("beforeunload", () => auto.Save())
 window.addEventListener("load", () => {
     auto.Load()
     sendBody.style.height = (sendBody.scrollHeight + 2) + "px"
+    sendHeaders.style.height = (sendHeaders.scrollHeight + 2) + "px"
 })
 
 sendBody.addEventListener("blur", (e) => {    
+    let ugly = e.target.value
+    if (ugly == "")
+    {
+        e.target.style.height = ""
+        return
+    }
+    try {
+        let parsed = JSON.parse(ugly)    
+        let pretty = JSON.stringify(parsed, undefined, 4)
+        e.target.value = pretty
+        e.target.style.height = (e.target.scrollHeight + 2) + "px"
+    } catch {}
+})
+
+sendHeaders.addEventListener("blur", (e) => {    
     let ugly = e.target.value
     if (ugly == "")
     {
