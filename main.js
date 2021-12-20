@@ -31,7 +31,8 @@ function executeRequest() {
         const status = `Status: ${response.currentTarget.status}<br>`
         const statusText = response.currentTarget.statusText != "" ? `Status Text: ${response.currentTarget.statusText}<br>` : ""
         const timeOut = `Timeout: ${response.currentTarget.timeout}<br><br>`
-        const responseText = response.currentTarget.responseText != "" ? `Response Text: <pre>${response.currentTarget.responseText}</pre>` : ""
+        const prettyResponse = JSON.stringify(JSON.parse(response.currentTarget.responseText), undefined, 4)
+        const responseText = response.currentTarget.responseText != "" ? `Response Text: <pre>${prettyResponse}</pre>` : ""
 
         result.innerHTML = status + statusText + timeOut + responseText
         sendBody.style.height = ""
