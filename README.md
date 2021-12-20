@@ -11,7 +11,7 @@ Starting using it from [the app link here...](https://determined-pike-06d5f7.net
 3. If Request Headers are required, you can enter them like an object. For eg: `{ "Content-Type": "application/json;charset=UTF-8" }`
 4. If Request Body is required, type or paste your JSON code.
 5. Click on **Send Request** to send the request and get the response.
-6. Response is display below the Request Body like the following:
+6. Response is displayed below the Request Body like the following:
 ```
 Status: 200
 Timeout: 0
